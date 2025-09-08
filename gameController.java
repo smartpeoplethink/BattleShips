@@ -1,6 +1,9 @@
 import java.util.List;
 
-public class statsController {
+
+
+public class gameController {
+
     stats GameStats = new stats();
     public boolean playRound(player player, List<int[]> ships){
         boolean hit = false;
@@ -20,12 +23,13 @@ public class statsController {
         return hit;
     }
     public void playGame(player player, List<int[]> ships){
-        while (GameStats.hitsMade< 17){ //17 = 5+4+3+3+2
+        while (GameStats.hitsMade< 14){ //17 = 5+4+3+3+2
             playRound(player, ships);
         }
 
         System.out.println("Guesses Made: ");
         System.out.print(GameStats.roundsPlayed);
+
 
         System.out.println("Hits Made:");
         System.out.print(GameStats.hitsMade);
@@ -33,3 +37,5 @@ public class statsController {
     }
 
 }
+
+

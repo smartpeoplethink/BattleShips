@@ -2,7 +2,8 @@
 import java.util.*;
 
 public class probSimulater implements player{
-    int simNumber = 1;
+    int SIMMULTIPLIER = 100;
+    double proportionIncrease = 1.3;
     generateShips gen = new generateShips();
     @Override
     public int[] guess() {
@@ -12,7 +13,7 @@ public class probSimulater implements player{
         List<int[]> ships = new ArrayList<>();
         int[][] prob = new int[10][10];
         int quantity = 0;
-        while (quantity <= simNumber){
+        while (quantity <= SIMMULTIPLIER*Math.pow(proportionIncrease, (17-pastGuesses.size()))){
             ships = gen.generate();
             boolean isNew = true;
             for (int[] pastGuess :pastGuesses){

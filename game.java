@@ -3,9 +3,9 @@ import java.util.List;
 import javax.swing.JFrame;
 
 public class game {
-    statsController controller;
+    gameController controller;
     game(){
-        controller = new statsController();
+        controller = new gameController();
     } 
     public void start(){
         
