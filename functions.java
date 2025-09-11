@@ -1,9 +1,15 @@
 import java.util.List;
+import java.util.Objects;
 
 public class functions {
-    static boolean inList(int x, int y, List<int[]> pastGuesses) {
-        return pastGuesses.stream()
-                        .anyMatch(arr -> arr[0] == x && arr[1] == y);
+    static int inList(int x, int y, List<int[]> pastGuesses) {
+        int value = pastGuesses.stream()
+                .filter(arr -> arr[0] == x && arr[1] == y)
+                .findFirst()
+                .map(arr -> arr[2])
+                .orElse(-1);
+
+        return value;
     }
     public static int[] maxElement(int[][] arr) {
     int max = Integer.MIN_VALUE;

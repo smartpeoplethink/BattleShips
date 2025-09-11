@@ -2,7 +2,7 @@ import java.util.*;
 
 public class generateShips {
     final int[] SHIPS = new int[]{2, 3, 3, 4, 5};
-
+    int index = 0;
     public List<int[]> generate() {
         Random rand = new Random();
         List<int[]> ships = new ArrayList<>();
@@ -19,7 +19,8 @@ public class generateShips {
                 int x = (r == 0) ? paralCord : perpCord;
                 int y = (r == 1) ? paralCord : perpCord;
 
-                newShip = generatePath(x, y, r, shiplen);
+                newShip = generatePath(x, y, r, shiplen, index);
+
 
                 // check overlap
                 boolean overlap = false;
@@ -39,6 +40,7 @@ public class generateShips {
                     }
                 }
             }
+            index++;
             ships.addAll(newShip);
         }
         return ships;
@@ -50,7 +52,7 @@ public class generateShips {
         }
     }
 
-    public static List<int[]> generatePath(int startX, int startY, int direction, int length) {
+    public static List<int[]> generatePath(int startX, int startY, int direction, int length, int index) {
         List<int[]> path = new ArrayList<>();
 
         for (int i = 0; i < length; i++) {
@@ -63,7 +65,7 @@ public class generateShips {
                 y += i;
             }
 
-            path.add(new int[]{x, y});
+            path.add(new int[]{x, y, length, index});
         }
         return path;
     }
