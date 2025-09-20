@@ -25,27 +25,27 @@ public class generateAllShips {
             List<int[]> ship5 = generateShips.generatePath(
                 (rShip5 != 1 ? coord1Ship5 : coord2Ship5),
                 (rShip5 == 1 ? coord2Ship5 : coord1Ship5), 
-                rShip5, 5);
+                rShip5, 5,4);
 
             List<int[]> ship4 = generateShips.generatePath(
                 (rShip4 != 1 ? coord1Ship4 : coord2Ship4),
                 (rShip4 == 1 ? coord2Ship4 : coord1Ship4), 
-                rShip4, 4);
+                rShip4, 4, 3);
 
             List<int[]> ship3_1 = generateShips.generatePath(
                 (rShip3_1 != 1 ? coord1Ship3_1 : coord2Ship3_1),
                 (rShip3_1 == 1 ? coord2Ship3_1 : coord1Ship3_1), 
-                rShip3_1, 3);
+                rShip3_1, 3, 2);
 
             List<int[]> ship3_2 = generateShips.generatePath(
                 (rShip3_2 != 1 ? coord1Ship3_2 : coord2Ship3_2),
                 (rShip3_2 == 1 ? coord2Ship3_2 : coord1Ship3_2), 
-                rShip3_2, 3);
+                rShip3_2, 3, 1);
 
             List<int[]> ship2 = generateShips.generatePath(
                 (rShip2 != 1 ? coord1Ship2 : coord2Ship2),
                 (rShip2 == 1 ? coord2Ship2 : coord1Ship2), 
-                rShip2, 2);
+                rShip2, 2, 0);
 
         }
         }    

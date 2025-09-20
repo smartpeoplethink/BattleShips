@@ -14,11 +14,13 @@ public class probSimulater extends player{
         List<int[]> ships;
         int[][] prob = new int[10][10];
         int quantity = 0;
+
+        //TO:DO Fix this it is somewhat broken. I think it has to do with inlistboolean
         while (quantity < GuessesNeeded(17-GameStats.hitsMade)){
             ships = gen.generate();
             boolean isNew = true;
             for (int[] pastGuess :GameStats.guessesList){
-                if (functions.inList(pastGuess[0], pastGuess[1], ships) != -1  ){
+                if (functions.inListBoolean(pastGuess[0], pastGuess[1], ships) ){
                     isNew = false;
 
                 }
@@ -27,7 +29,7 @@ public class probSimulater extends player{
                 
                 quantity++;
                 for (int[] ship : ships){
-                    if (functions.inList(ship[0], ship[1], GameStats.guessesList) == -1){
+                    if (functions.inListBoolean(ship[0], ship[1], GameStats.guessesList)){
                         prob[ship[0]][ship[1]]++;
                     }
                     else{

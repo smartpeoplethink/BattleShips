@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
@@ -24,7 +25,7 @@ public class repeatSquareShips {
         long index = 0;
         while (index <= N){
             // index = RandomPermutation.permute(i, a, b);
-            List<int[]> shipSquares = ShipConfigMapper.alterData(ShipConfigMapper.decode(index));
+            List<int[]> shipSquares = new ArrayList<>();
             // System.out.print("Index: ");
             // System.out.println(i);
             // System.out.print("Unique: ");

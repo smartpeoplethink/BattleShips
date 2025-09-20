@@ -1,13 +1,26 @@
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public class functions {
+    public static void main(String[] args) {
+        List<int[]> newList = new ArrayList<>();
+        newList.add(new int[]{0,1,2,3});
+        newList.add(new int[]{10,11,12,13});
+        newList.add(new int[]{100,101,102,103});
+        System.out.print(inListBoolean(0,1,newList));
+    }
     static int inList(int x, int y, List<int[]> pastGuesses) {
         int value = pastGuesses.stream()
                 .filter(arr -> arr[0] == x && arr[1] == y)
                 .findFirst()
-                .map(arr -> arr[2])
+                .map(arr -> arr[3])
                 .orElse(-1);
+
+        return value;
+    }
+    static boolean inListBoolean(int x, int y, List<int[]> pastGuesses) {
+        boolean value = pastGuesses.stream()
+                .anyMatch(arr -> arr[0] == x && arr[1] == y);
 
         return value;
     }

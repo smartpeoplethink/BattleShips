@@ -1,5 +1,6 @@
 public abstract class player {
-
+    static final int NOGUESSMADE = 5;
+    static final int MISS = -1;
     stats GameStats = new stats();
     public abstract int[] Guess();
 

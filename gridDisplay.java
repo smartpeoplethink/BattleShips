@@ -34,7 +34,25 @@ public class gridDisplay extends JPanel {
                 // If this cell is in greyCells → make it grey
                 for (int[] coord : greyCells) {
                     if (coord[0] == c && coord[1] == r) {
-                        g.setColor(Color.GRAY);
+                        switch(coord[3]){
+                            case 0:
+                                g.setColor(new Color(11, 32, 67));
+                                break;
+                            case 1:
+                                g.setColor(Color.DARK_GRAY);
+                                break;
+                            case 2:
+                                g.setColor(Color.BLACK);
+                                break;
+                            case 3:
+                                g.setColor(new Color(128, 93, 3));
+                                break;
+                            case 4:
+                                g.setColor(Color.GRAY);
+                                break;
+
+                        }
+//                        g.setColor(Color.GRAY);
                         break;
                     }
                 }

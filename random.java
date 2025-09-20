@@ -12,7 +12,8 @@ class random extends player{
     do {
         x = rand.nextInt(10); // shorter form: 0–9
         y = rand.nextInt(10);
-    } while (-1 != functions.inList(x, y, GameStats.guessesList));
+
+    } while (functions.inListBoolean(x, y, GameStats.guessesList)); //potentially broken
 
         return new int[]{x, y};
     }
