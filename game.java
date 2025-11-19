@@ -11,7 +11,7 @@ public class game {
     } 
     public void start(){
         int amountOfTurns = 0;
-        int roundsToPlay = 100;
+        int roundsToPlay = 3;
         int maxAmount = 0;
         int minAmount = 100;
         player bestP = null;
