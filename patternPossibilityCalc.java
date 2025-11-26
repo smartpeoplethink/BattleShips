@@ -212,9 +212,18 @@ public class patternPossibilityCalc extends player {
                 double[] possibilities = new double[square.size()];
                 for (int i = 0; i<square.size(); i++){
 
-                    possibilities[i] = 1.0/square.get(i).quantity;
+                    possibilities[i] = ((double)square.get(i).length)/((double)square.get(i).quantity);
                 }
-                boardResults[col][row] = Probability.orADDITION(possibilities);
+                double prob;
+                if (mainPanel.additionMethod){
+                    prob = Probability.orADDITION(possibilities);
+                }else{
+                    prob = Probability.orADDITION(possibilities);
+                }
+                if ((row+col)%2 == 0){
+                    prob*=mainPanel.evenSquareIncrease;
+                }
+                boardResults[col][row] = prob;
             }
         }
 
